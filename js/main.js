@@ -1,21 +1,16 @@
-$(window).on('resize', function () {
+$(document).ready(function() {
 
-	var w = $('.hills').width();
-	var h = $('.hills').height();
+	var w = $('.hills').width() -$(window).width();
+	var h = $('.hills').height() + w;
 
-	$('.hills').css('transform');
+		$('body').css('height', h);
+
+	$(window).on('scroll',function() {
+
+		var px = $(window).scrollTop();
+		$('.hills').css('left',-px)
+
+	});
 
 });
-
-
-
-
-
-
-// $(window).on('scroll',function() {
-
-// 	var px = $(window).scrollTop();
-// 	console.log(px);
-
-// });
 
